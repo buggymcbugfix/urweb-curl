@@ -19,7 +19,10 @@ in
     buildInputs = [gcc];
     # TODO: Improve like urweb.nix c, cflags etc
     configurePhase = ''
-      sed -e s~@LIBCURL@~${curl.out}/lib/libcurl.${libExt}~g -e s~@LIBCURLDEV@~${curl.dev}/include~g lib.urp.in > lib.urp
+      cp lib.urp.in lib.urp
+      substituteInPlace lib.urp \
+        --replace-fail '@LIBCURL@' '${lib.getLib curl}/lib/libcurl${stdenv.hostPlatform.extensions.sharedLibrary}' \
+        --replace-fail '@LIBCURLDEV@' '${lib.getDev curl}/include'
     '';
     buildPhase = ''
       ${gcc}/bin/gcc -c -I${urweb}/include/urweb -I${curl.dev}/include -I${icu.dev}/include -Isrc/c -o src/c/curl.o -Wimplicit -Wall -Werror -Wno-deprecated-declarations src/c/curl.c
