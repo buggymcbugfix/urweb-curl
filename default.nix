@@ -1,9 +1,10 @@
 {
-  stdenv,
   curl,
   gcc,
-  urweb,
   icu,
+  lib,
+  stdenv,
+  urweb,
 }: let
   libExt =
     if stdenv.isDarwin
@@ -27,8 +28,9 @@ in
     buildPhase = ''
       ${gcc}/bin/gcc -c -I${urweb}/include/urweb -I${curl.dev}/include -I${icu.dev}/include -Isrc/c -o src/c/curl.o -Wimplicit -Wall -Werror -Wno-deprecated-declarations src/c/curl.c
     '';
-    installPhase = "
-    mkdir $out
-    cp -r . $out
-  ";
+    
+    installPhase = ''
+      mkdir $out
+      cp -r . $out
+    '';
   }
