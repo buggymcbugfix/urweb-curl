@@ -1,0 +1,4 @@
+outcome: answered 401
+header: WWW-Authenticate: Basic realm="test"
+header: Content-Length: 13
+body: "who are you?\n"

@@ -1,0 +1,4 @@
+outcome: answered 200
+header: Content-Type: text/plain; charset=utf-8
+header: Content-Length: 123
+body: "method: PATCH\npath: /echo\nAccept: */*\nContent-Type: application/json\nUser-Agent: urweb-curl/1.0\nContent-Length: 2\nbody: []\n"

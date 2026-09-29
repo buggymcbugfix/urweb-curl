@@ -1,0 +1,4 @@
+outcome: answered 500
+header: Content-Type: text/plain
+header: Content-Length: 11
+body: "status 500\n"

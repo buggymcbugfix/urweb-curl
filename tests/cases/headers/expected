@@ -1,0 +1,4 @@
+outcome: answered 200
+header: Content-Type: text/plain; charset=utf-8
+header: Content-Length: 119
+body: "method: GET\npath: /echo\nAccept: */*\nX-One: 1\nX-Dup: first\nX-Dup: second\nUser-Agent: test/0\nExpect: 100-continue\nbody: \n"

@@ -1,0 +1,8 @@
+outcome: answered 200
+header: Content-Type: text/plain; charset=utf-8
+header: X-One: 1
+header: Set-Cookie: a=1; Path=/
+header: Set-Cookie: b=2; Path=/
+header: X-Two: two  words
+header: Content-Length: 13
+body: "with headers\n"

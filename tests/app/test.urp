@@ -1,0 +1,12 @@
+library ..
+allow url http://127.0.0.1:*
+allow url https://127.0.0.1:*
+allow url http://nonexistent.invalid/*
+allow env CURL_TEST_*
+minHeap 65536
+
+$/char
+$/list
+$/option
+$/string
+test

@@ -1,0 +1,4 @@
+outcome: answered 200
+header: Content-Type: text/plain; charset=utf-8
+header: Content-Length: 175
+body: "method: POST\npath: /echo\nAccept: */*\nContent-Type: application/x-www-form-urlencoded\nUser-Agent: urweb-curl/1.0\nContent-Length: 37\nbody: a%20b=c%26d&Gr%C3%B6%C3%9Fe=%E2%82%AC\n"

@@ -1,0 +1,3 @@
+x-two: Some "two  words"
+set-cookie: Some "a=1; Path=/"
+x-none: None
