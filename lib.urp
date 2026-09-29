@@ -1,0 +1,9 @@
+library config
+ffi curlFfi
+effectful CurlFfi.perform
+
+$/char
+$/list
+$/option
+$/string
+curl

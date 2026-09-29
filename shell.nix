@@ -1,9 +1,10 @@
+# nix-shell: the library's build inputs and its Ur/Web.
+# `URWEB=/path/to/bin/urweb make check` tests against another compiler,
+# e.g. an in-tree build of a modified Ur/Web.
+{ pkgs ? import ./nixpkgs.nix }:
 let
-  pinnedNixpkgs = import (builtins.fetchTarball {
-    name = "pinned-nixpkgs-for-urweb-school";
-    url = https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz;
-    # Hash obtained using `nix-prefetch-url --unpack <url>`
-    sha256 = "0mhqhq21y5vrr1f30qd2bvydv4bbbslvyzclhw0kdxmkgg3z4c92";
-  }) {};
+  urweb-curl = pkgs.callPackage ./derivation.nix { };
 in
-{ pkgs ? pinnedNixpkgs }: pkgs.callPackage ./default.nix {}
+pkgs.mkShell {
+  inputsFrom = [ urweb-curl ];
+}
