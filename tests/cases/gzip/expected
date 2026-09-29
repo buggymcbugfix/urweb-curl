@@ -1,0 +1,5 @@
+outcome: answered 200
+header: Content-Type: text/plain
+header: Content-Encoding: gzip
+header: Content-Length: 35
+body: "was compressed\n"

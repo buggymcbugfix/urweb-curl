@@ -1,0 +1,4 @@
+outcome: answered 404
+header: Content-Type: text/plain
+header: Content-Length: 11
+body: "status 404\n"

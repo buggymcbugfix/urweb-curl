@@ -1,0 +1,4 @@
+outcome: answered 302
+header: Location: /redirect/1
+header: Content-Length: 0
+body: ""

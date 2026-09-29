@@ -60,7 +60,7 @@ type opts =
 			}, (* for the whole request *)
 		MaxResponse : blobSize, (* headers and body; over
 												 it, ResponseTooLarge *)
-		FollowRedirects : int
+		FollowRedirects : int (* how many redirects to follow *)
 	} (* how many; 0: the 3xx is
 											 the answer *)
 

@@ -1,0 +1,4 @@
+outcome: answered 200
+header: Content-Type: text/plain; charset=utf-8
+header: Content-Length: 73
+body: "method: DELETE\npath: /echo\nAccept: */*\nUser-Agent: urweb-curl/1.0\nbody: \n"
