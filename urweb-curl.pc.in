@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+urp=@LIB_UR@
+
+Name: urweb-curl
+Description: HTTP requests from Ur/Web io code
+Version: @PACKAGE_VERSION@
+Requires.private: libcurl
+Libs: -L${libdir} -lurweb-curl
+Cflags: -I${includedir}/urweb

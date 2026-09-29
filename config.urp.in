@@ -1,0 +1,3 @@
+include @abs_INCLUDE@/curl.h
+link @abs_libdir@/liburweb-curl.a
+link @LIBCURL_LIBDIR@/libcurl.@SHLIB_EXT@
