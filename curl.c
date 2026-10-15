@@ -540,6 +540,10 @@ uw_CurlFfi_completed uw_CurlFfi_perform(uw_context ctx, uw_CurlFfi_request r) {
                               failure(code, errbuf));
   }
 
+  // The handle outlives this call.  Reset it now, so that it keeps no
+  // pointer to the transfer, which release frees, or to this frame (the
+  // error buffer); the connections it holds are kept by a reset.
+  curl_easy_reset(c);
   uw_pop_cleanup(ctx);
   return result;
 }
