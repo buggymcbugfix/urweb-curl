@@ -48,8 +48,8 @@ val json : string -> body
 
 type opts =
 	{
-		Headers : list (string * string), (* sent in this order, after
-															the body's Content-Type *)
+		Headers : list (string * string), (* sent first, in this order; the
+															body's Content-Type follows them *)
 		Body : option body,
 		Auth : auth,
 		Tls : tls,
