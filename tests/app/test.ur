@@ -206,6 +206,7 @@ fun all () : io unit =
 		request "bad-header-name" (withHeaders base (("X Y", "1") :: [])) Get echo;
 		request "bad-header-value" (withHeaders base (("X-One", "a\r\nX-Two: b") :: [])) Get echo;
 		request "content-type-header" (withHeaders (withBody base (json "{}")) (("Content-Type", "text/plain") :: [])) Post echo;
+		request "authorization-header" (withHeaders (base -- #Auth ++ {Auth = Bearer "tok-123"}) (("Authorization", "Basic dXNlcjpzZWNyZXQ=") :: [])) Get echo;
 		request "head-with-body" (withBody base (json "{}")) Head echo;
 		request "bad-method" base (Method "GE T") echo;
 		request "bad-timeout" (base -- #Timeout ++ {Timeout = {Connect = ms 0, Total = sec 5}}) Get echo;

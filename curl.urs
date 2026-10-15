@@ -114,10 +114,11 @@ val show_outcome : show outcome
    application's `allow url` rules admit, http or https; only those two
    schemes are spoken, redirects included.  What run refuses with BadOpts: a
    header whose name is empty or holds anything but token characters, a
-   header value with a line break, a Content-Type header beside a body, a
-   body on a HEAD request, an empty method or one with a space or a line
-   break, a timeout that is not positive, a limit that is not positive, a
-   negative redirect count, an empty CA file name.
+   header value with a line break, a Content-Type header beside a body, an
+   Authorization header beside an Auth, a body on a HEAD request, an empty
+   method or one with a space or a line break, a timeout that is not
+   positive, a limit that is not positive, a negative redirect count, an
+   empty CA file name.
 
    The connection to a server that keeps it open is kept by the task for its
    next request.  URWEB_CURL_DEBUG=1 traces every request on stderr, with the

@@ -167,6 +167,8 @@ fun problem (o : opts) (m : method) : option string =
 		| None =>
 			if Option.isSome o.Body && List.exists (fn (n, _) => lower n = "content-type") o.Headers then
 				Some "Content-Type is given by the body, not as a header"
+			else if (case o.Auth of NoAuth => False | _ => True) && List.exists (fn (n, _) => lower n = "authorization") o.Headers then
+				Some "Authorization is given by Auth, not as a header"
 			else if Option.isSome o.Body && (case m of Head => True | _ => False) then
 				Some "a HEAD request has no body"
 			else if (case o.Body of Some b => hasLineBreak b.ContentType | None => False) then
